@@ -12,6 +12,7 @@ namespace acIDS
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// Test
         public static userData user = new userData();
         public static processHandler phandler = new processHandler();
 
