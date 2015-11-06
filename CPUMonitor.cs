@@ -19,12 +19,13 @@ namespace acIDS
         public static float TotalCPU { get; set; }
         public static int Counter { get; set; }
 
-        public static void StartMonitoring(TextBox usageTextBox)
+        public static void StartMonitoring(TextBox usageTextBox, TextBox warningTextBox, int minutes, int seconds)
         {
-            Task.Run(() => { CPUMonitoring(usageTextBox); });
+            Task.Run(() => { CPUAnomalies.SetNormalUsageByTime(minutes, seconds); });
+            Task.Run(() => { CPUMonitoring(usageTextBox, warningTextBox); });
         }
         //Function will read and display current CPU usage
-        public static async void CPUMonitoring(TextBox usageTextBox)
+        public static async void CPUMonitoring(TextBox usageTextBox, TextBox warningTextBox)
         {
 
             PerformanceCounter cpuCounter = new PerformanceCounter();
@@ -44,6 +45,7 @@ namespace acIDS
                     usageTextBox.Text = CPUCounter.ToString("F2") + "%";
                 }));
                 CPUCalculations();
+                CPUAnomalies.StartAnomalyDetection(warningTextBox);
 
                 if (mainMenu.done)
                     break;

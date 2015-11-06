@@ -559,9 +559,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumTurquoise;
             this.ClientSize = new System.Drawing.Size(971, 651);
-            this.Controls.Add(this.nidsPanel);
             this.Controls.Add(this.hidsPanel);
+            this.Controls.Add(this.nidsPanel);
             this.Controls.Add(this.mainPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(989, 698);
+            this.MinimumSize = new System.Drawing.Size(989, 698);
             this.Name = "mainMenu";
             this.Text = "Main Menu";
             this.hidsPanel.ResumeLayout(false);

@@ -32,7 +32,9 @@ namespace acIDS
         {
             changePanels(Panel.HidsPanel);
             RAMMonitor.Startmonitoring(ramMonitorTxt);
-            CPUMonitor.StartMonitoring(cpuUsageTxt);
+
+            //FIX::Hardcoded numbers
+            CPUMonitor.StartMonitoring(cpuUsageTxt, cpuWarningTxt, 0, 5);
             ProcessMonitor.Startmonitoring(pRunningTxt, plistTxt);
         }
 

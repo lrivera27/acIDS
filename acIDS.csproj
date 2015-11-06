@@ -62,6 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CPUAnomalies.cs" />
     <Compile Include="ProcessMonitor.cs" />
     <Compile Include="CPUMonitor.cs" />
     <Compile Include="loginForm.cs">

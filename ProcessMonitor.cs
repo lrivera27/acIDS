@@ -32,16 +32,17 @@ namespace acIDS
                 CurrentNumberProcesses();
                 usageTextBox.Invoke(new Action(() =>
                 {
-                    usageTextBox.Text = ProcessCounter+"";
+                    usageTextBox.Text = ProcessCounter + "";
                 }));
 
-                if(changed != ProcessCounter)
+                if (changed != ProcessCounter)
                 {
                     changed = ProcessCounter;
-                    listTextBox.Invoke(new Action(() => {
-                        data = readProcesses();
+                    listTextBox.Invoke(new Action(() =>
+                    {
+                        data = ReadProcesses();
 
-                        foreach(string pData in data)
+                        foreach (string pData in data)
                         {
                             if (listTextBox.Text.Length < 0)
                                 listTextBox.Text = pData;
@@ -58,7 +59,7 @@ namespace acIDS
             ProcessCounter = numProcess.Length;
         }
 
-        public static string[] readProcesses()
+        public static string[] ReadProcesses()
         {
             Process[] allProcesesses = Process.GetProcesses();
 
@@ -79,6 +80,23 @@ namespace acIDS
             Counter++;
             TotalProcesses += ProcessCounter;
             AverageProcess = TotalProcesses / Counter;
+        }
+
+        public static string ReadProcessesAsString()
+        {
+            var output = "";
+            bool first = true;
+            foreach (var str in ReadProcesses())
+            {
+                if (!first)
+                    output += "                " + str + Environment.NewLine;
+                else
+                {
+                    output += str + Environment.NewLine;
+                    first = false;
+                }
+            }
+            return output;
         }
     }
 }

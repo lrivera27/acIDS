@@ -56,10 +56,14 @@ namespace acIDS
 
                 CPU Stats: 
 
-                Current CPU Usage: {CPUMonitor.CPUCounter.ToString("F2")}%
-                Highest CPU Usage: {CPUMonitor.HighestCPU.ToString("F2")}%
-                Lowest CPU Usage: {CPUMonitor.LowestCPU.ToString("F2")}%
-                Average CPU Usage: {CPUMonitor.AverageCPU.ToString("F2")}%
+                Current CPU Usage: {CPUMonitor.CPUCounter.ToString("F2")} %
+
+                Highest CPU Usage: {CPUMonitor.HighestCPU.ToString("F2")} %
+
+                Lowest CPU Usage:  {CPUMonitor.LowestCPU.ToString("F2")}  %
+
+                Average CPU Usage: {CPUMonitor.AverageCPU.ToString("F2")} %
+
                 Warnings: 
                 NotYetSet
 
@@ -67,20 +71,27 @@ namespace acIDS
 
                 RAM Stats: 
 
-                Current RAM Available: {RAMMonitor.RAMCounter}MB
-                Highest RAM Available: {RAMMonitor.HighestRAM}MB
-                Lowest RAM Available: {RAMMonitor.LowestRAM}MB
-                Average RAM Available: {RAMMonitor.AverageRAM}MB
-                Warnings:  
+                Current RAM Available: {RAMMonitor.RAMCounter} MB
+
+                Highest RAM Available: {RAMMonitor.HighestRAM} MB
+
+                Lowest RAM Available:  {RAMMonitor.LowestRAM}  MB
+
+                Average RAM Available: {RAMMonitor.AverageRAM} MB
+
+                Warnings:
+  
                 NotYetSet
 
                 -----------------------------------  
 
                 Processes Stats:     
 
-                Current number of Processes: NotYetSet
+                Current number of Processes: {ProcessMonitor.ProcessCounter}
+
                 List of Current Running Processes: 
-                NotYetSet";
+
+                {ProcessMonitor.ReadProcessesAsString()}";
 
             File.WriteAllText(path, dataToExport);
             string test = File.ReadAllText(path);
