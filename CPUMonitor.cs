@@ -21,12 +21,10 @@ namespace acIDS
 
         public static void StartMonitoring(TextBox usageTextBox)
         {
-            var monitoring = new Thread(o => CPUMonitoring((TextBox)o));
-            monitoring.Start(usageTextBox);
-
+            Task.Run(() => { CPUMonitoring(usageTextBox); });
         }
         //Function will read and display current CPU usage
-        public static void CPUMonitoring(TextBox usageTextBox)
+        public static async void CPUMonitoring(TextBox usageTextBox)
         {
 
             PerformanceCounter cpuCounter = new PerformanceCounter();
@@ -34,17 +32,21 @@ namespace acIDS
             cpuCounter.CounterName = "% Processor Time";
             cpuCounter.InstanceName = "_Total";
 
-            while (!mainMenu.done)
+            while (true)
             {
+                //First value always returns a 0
                 var unused = cpuCounter.NextValue();
-                Thread.Sleep(1000);
+                await Task.Delay(1000);
 
-                usageTextBox.Invoke((Action)delegate
+                usageTextBox.Invoke(new Action(() =>
                 {
                     CPUCounter = cpuCounter.NextValue();
                     usageTextBox.Text = CPUCounter.ToString("F2") + "%";
-                });
+                }));
                 CPUCalculations();
+
+                if (mainMenu.done)
+                    break;
             }
         }
 

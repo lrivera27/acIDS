@@ -72,7 +72,6 @@ namespace acIDS
             for (int i = 0; i < allProcesesses.Length; i++)
                 data[i] = allProcesesses[i].ProcessName;
             return data;
-
         }
 
         public void exportProcesses(string filename, string path, string[] data)

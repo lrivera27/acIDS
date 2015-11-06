@@ -62,7 +62,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CPUMonitoring.cs" />
+    <Compile Include="ProcessMonitor.cs" />
+    <Compile Include="CPUMonitor.cs" />
     <Compile Include="loginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +79,7 @@
     <Compile Include="processHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RAMMonitor.cs" />
     <Compile Include="registrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,7 +87,7 @@
       <DependentUpon>registrationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="tools.cs" />
-    <Compile Include="userData.cs" />
+    <Compile Include="UserData.cs" />
     <EmbeddedResource Include="loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>
     </EmbeddedResource>

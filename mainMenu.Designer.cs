@@ -35,7 +35,6 @@
             this.hidsPanel = new System.Windows.Forms.Panel();
             this.expertHids = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.plistTxt = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.pRunningTxt = new System.Windows.Forms.TextBox();
@@ -55,7 +54,7 @@
             this.cpuWarningTxt = new System.Windows.Forms.TextBox();
             this.cpuUsageTxt = new System.Windows.Forms.TextBox();
             this.outputBtn = new System.Windows.Forms.Button();
-            this.backBtn = new System.Windows.Forms.Button();
+            this.hidsBackBtn = new System.Windows.Forms.Button();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.nidsBtn = new System.Windows.Forms.Button();
@@ -67,7 +66,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.nidsBackBtn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.hidsPanel.SuspendLayout();
@@ -134,7 +133,7 @@
             this.hidsPanel.Controls.Add(this.groupBox2);
             this.hidsPanel.Controls.Add(this.groupBox1);
             this.hidsPanel.Controls.Add(this.outputBtn);
-            this.hidsPanel.Controls.Add(this.backBtn);
+            this.hidsPanel.Controls.Add(this.hidsBackBtn);
             this.hidsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.hidsPanel.Location = new System.Drawing.Point(0, 0);
             this.hidsPanel.Name = "hidsPanel";
@@ -154,7 +153,6 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.button3);
             this.groupBox4.Controls.Add(this.plistTxt);
             this.groupBox4.Controls.Add(this.label13);
             this.groupBox4.Controls.Add(this.pRunningTxt);
@@ -168,28 +166,16 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Processes";
             // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button3.Location = new System.Drawing.Point(108, 456);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(144, 47);
-            this.button3.TabIndex = 26;
-            this.button3.Text = "Refresh";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // plistTxt
             // 
             this.plistTxt.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.plistTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.plistTxt.Location = new System.Drawing.Point(21, 164);
+            this.plistTxt.Location = new System.Drawing.Point(21, 140);
             this.plistTxt.Multiline = true;
             this.plistTxt.Name = "plistTxt";
             this.plistTxt.ReadOnly = true;
             this.plistTxt.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.plistTxt.Size = new System.Drawing.Size(338, 251);
+            this.plistTxt.Size = new System.Drawing.Size(338, 339);
             this.plistTxt.TabIndex = 13;
             this.plistTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -198,11 +184,11 @@
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label13.Location = new System.Drawing.Point(125, 121);
+            this.label13.Location = new System.Drawing.Point(125, 97);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(115, 21);
+            this.label13.Size = new System.Drawing.Size(98, 21);
             this.label13.TabIndex = 14;
-            this.label13.Text = "List Processes";
+            this.label13.Text = "Process List";
             // 
             // pRunningTxt
             // 
@@ -223,7 +209,7 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(149, 21);
             this.label12.TabIndex = 13;
-            this.label12.Text = "Processes Running";
+            this.label12.Text = "Running Processes";
             // 
             // panel1
             // 
@@ -400,16 +386,16 @@
             this.outputBtn.UseVisualStyleBackColor = true;
             this.outputBtn.Click += new System.EventHandler(this.outputBtn_Click);
             // 
-            // backBtn
+            // hidsBackBtn
             // 
-            this.backBtn.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.backBtn.Location = new System.Drawing.Point(815, 592);
-            this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(144, 47);
-            this.backBtn.TabIndex = 1;
-            this.backBtn.Text = "Back";
-            this.backBtn.UseVisualStyleBackColor = true;
-            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
+            this.hidsBackBtn.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.hidsBackBtn.Location = new System.Drawing.Point(815, 592);
+            this.hidsBackBtn.Name = "hidsBackBtn";
+            this.hidsBackBtn.Size = new System.Drawing.Size(144, 47);
+            this.hidsBackBtn.TabIndex = 1;
+            this.hidsBackBtn.Text = "Back";
+            this.hidsBackBtn.UseVisualStyleBackColor = true;
+            this.hidsBackBtn.Click += new System.EventHandler(this.hidsBackBtn_Click);
             // 
             // mainPanel
             // 
@@ -450,7 +436,7 @@
             // 
             this.nidsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(47)))), ((int)(((byte)(62)))));
             this.nidsPanel.Controls.Add(this.groupBox3);
-            this.nidsPanel.Controls.Add(this.button2);
+            this.nidsPanel.Controls.Add(this.nidsBackBtn);
             this.nidsPanel.Controls.Add(this.panel3);
             this.nidsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nidsPanel.Location = new System.Drawing.Point(0, 0);
@@ -534,16 +520,16 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Bytes Sent";
             // 
-            // button2
+            // nidsBackBtn
             // 
-            this.button2.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.button2.Location = new System.Drawing.Point(815, 592);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(144, 47);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Back";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.nidsBackBtn.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.nidsBackBtn.Location = new System.Drawing.Point(815, 592);
+            this.nidsBackBtn.Name = "nidsBackBtn";
+            this.nidsBackBtn.Size = new System.Drawing.Size(144, 47);
+            this.nidsBackBtn.TabIndex = 17;
+            this.nidsBackBtn.Text = "Back";
+            this.nidsBackBtn.UseVisualStyleBackColor = true;
+            this.nidsBackBtn.Click += new System.EventHandler(this.nidsBackBtn_Click);
             // 
             // panel3
             // 
@@ -573,8 +559,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumTurquoise;
             this.ClientSize = new System.Drawing.Size(971, 651);
-            this.Controls.Add(this.hidsPanel);
             this.Controls.Add(this.nidsPanel);
+            this.Controls.Add(this.hidsPanel);
             this.Controls.Add(this.mainPanel);
             this.Name = "mainMenu";
             this.Text = "Main Menu";
@@ -606,7 +592,7 @@
         private System.Windows.Forms.Button aboutBtn;
         private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.Panel hidsPanel;
-        private System.Windows.Forms.Button backBtn;
+        private System.Windows.Forms.Button hidsBackBtn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
@@ -628,7 +614,7 @@
         private System.Windows.Forms.Panel nidsPanel;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button nidsBackBtn;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox networkWarningTxt;
@@ -642,6 +628,5 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox pRunningTxt;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button3;
     }
 }
