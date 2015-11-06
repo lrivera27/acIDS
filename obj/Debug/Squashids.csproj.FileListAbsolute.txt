@@ -1,0 +1,21 @@
+C:\Users\arnal\Documents\acIDS\ProjectOS\bin\Debug\Squashids.exe.config
+C:\Users\arnal\Documents\acIDS\ProjectOS\obj\Debug\Squashids.exe
+C:\Users\arnal\Documents\acIDS\ProjectOS\obj\Debug\Squashids.pdb
+C:\Users\arnal\Documents\acIDS\ProjectOS\bin\Debug\Squashids.exe
+C:\Users\arnal\Documents\acIDS\ProjectOS\bin\Debug\Squashids.pdb
+C:\Users\arnal\Documents\acIDS\ProjectOS\obj\Debug\Squashids.csprojResolveAssemblyReference.cache
+C:\Users\arnal\Documents\acIDS\ProjectOS\obj\Debug\Squashids.loginForm.resources
+C:\Users\arnal\Documents\acIDS\ProjectOS\obj\Debug\Squashids.mainMenu.resources
+C:\Users\arnal\Documents\acIDS\ProjectOS\obj\Debug\Squashids.Properties.Resources.resources
+C:\Users\arnal\Documents\acIDS\ProjectOS\obj\Debug\Squashids.csproj.GenerateResource.Cache
+C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\ProjectOS-toApprove\ProjectOS-toApprove\bin\Debug\Squashids.exe
+C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\ProjectOS-toApprove\ProjectOS-toApprove\bin\Debug\Squashids.exe.config
+C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\ProjectOS-toApprove\ProjectOS-toApprove\obj\Debug\Squashids.loginForm.resources
+C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\ProjectOS-toApprove\ProjectOS-toApprove\obj\Debug\Squashids.mainMenu.resources
+C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\ProjectOS-toApprove\ProjectOS-toApprove\obj\Debug\Squashids.Properties.Resources.resources
+C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\ProjectOS-toApprove\ProjectOS-toApprove\obj\Debug\Squashids.registrationForm.resources
+C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\ProjectOS-toApprove\ProjectOS-toApprove\obj\Debug\Squashids.csproj.GenerateResource.Cache
+C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\ProjectOS-toApprove\ProjectOS-toApprove\obj\Debug\Squashids.exe
+C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\ProjectOS-toApprove\ProjectOS-toApprove\obj\Debug\Squashids.pdb
+C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\ProjectOS-toApprove\ProjectOS-toApprove\obj\Debug\Squashids.csprojResolveAssemblyReference.cache
+C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\ProjectOS-toApprove\ProjectOS-toApprove\bin\Debug\Squashids.pdb

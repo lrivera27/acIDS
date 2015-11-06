@@ -1,0 +1,6 @@
+C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\acIDS\ProjectOS-toApprove\bin\Debug\Squashids.exe.config
+C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\acIDS\ProjectOS-toApprove\obj\Debug\Squashids.exe
+C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\acIDS\ProjectOS-toApprove\obj\Debug\Squashids.pdb
+C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\acIDS\bin\Debug\Squashids.exe.config
+C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\acIDS\obj\Debug\Squashids.exe
+C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\acIDS\obj\Debug\Squashids.pdb
