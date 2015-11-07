@@ -16,10 +16,6 @@ namespace acIDS
     public partial class mainMenu : Form
     {
         public static bool done = false;
-        public float _ramCounter;
-        public string _warnings = "No Warnings";
-        public float _bytesSent;
-        public float _bytesReceived;
 
         public enum Panel { HidsPanel, NidsPanel, MainPanel};
 
@@ -88,23 +84,6 @@ namespace acIDS
             loginForm ss = new loginForm();
             Close();
             ss.Show();
-        }
-
-        private void anomalyCPU(float percentageCPU)
-        {
-
-            if (percentageCPU > 10)
-            {
-                if (cpuWarningTxt.Text.Length == 0)
-                {
-                    cpuWarningTxt.Text = "Warning! CPU Usage: " + percentageCPU;
-                }
-                else
-                {
-                    cpuWarningTxt.AppendText("\r\n" + "Warning! CPU Usage: " + percentageCPU);
-                }
-                _warnings = cpuWarningTxt.Text;
-            }
         }
     }
 }
