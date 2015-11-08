@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Threading;
-using System.Diagnostics;
 
 namespace acIDS
 {
@@ -33,7 +33,7 @@ namespace acIDS
                     {
                         warningTextBox.Invoke(new Action(() =>
                         {
-                            warningTextBox.AppendText($"Warning! RAM Usage: {RAMMonitor.RAMCounter} MB");
+                            warningTextBox.AppendText($"\r\nWarning! RAM Usage: {RAMMonitor.RAMCounter} MB");
                         }));
                     }
                 }

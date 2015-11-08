@@ -16,10 +16,10 @@ namespace acIDS
 
         [STAThread]
         static void Main()
-        {    
+        {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new mainMenu());
+            Application.Run(new loginForm());
         }
     }
 }
