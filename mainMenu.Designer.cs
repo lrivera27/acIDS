@@ -170,7 +170,7 @@
             // 
             this.plistTxt.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.plistTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.plistTxt.Location = new System.Drawing.Point(21, 140);
+            this.plistTxt.Location = new System.Drawing.Point(21, 155);
             this.plistTxt.Multiline = true;
             this.plistTxt.Name = "plistTxt";
             this.plistTxt.ReadOnly = true;
@@ -184,7 +184,7 @@
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label13.Location = new System.Drawing.Point(125, 97);
+            this.label13.Location = new System.Drawing.Point(131, 108);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(98, 21);
             this.label13.TabIndex = 14;
@@ -245,9 +245,9 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 10F);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox2.Location = new System.Drawing.Point(541, 343);
+            this.groupBox2.Location = new System.Drawing.Point(515, 343);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(377, 212);
+            this.groupBox2.Size = new System.Drawing.Size(403, 212);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "RAM Monitor";
@@ -256,7 +256,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label3.Location = new System.Drawing.Point(12, 102);
+            this.label3.Location = new System.Drawing.Point(6, 108);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 21);
             this.label3.TabIndex = 12;
@@ -280,7 +280,7 @@
             this.ramWarningTxt.Multiline = true;
             this.ramWarningTxt.Name = "ramWarningTxt";
             this.ramWarningTxt.ReadOnly = true;
-            this.ramWarningTxt.Size = new System.Drawing.Size(261, 76);
+            this.ramWarningTxt.Size = new System.Drawing.Size(292, 76);
             this.ramWarningTxt.TabIndex = 9;
             this.ramWarningTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -299,7 +299,7 @@
             // 
             this.ramMonitorTxt.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ramMonitorTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ramMonitorTxt.Location = new System.Drawing.Point(252, 32);
+            this.ramMonitorTxt.Location = new System.Drawing.Point(283, 39);
             this.ramMonitorTxt.Name = "ramMonitorTxt";
             this.ramMonitorTxt.ReadOnly = true;
             this.ramMonitorTxt.Size = new System.Drawing.Size(106, 28);
@@ -325,9 +325,9 @@
             this.groupBox1.Controls.Add(this.cpuUsageTxt);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 10F);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox1.Location = new System.Drawing.Point(539, 106);
+            this.groupBox1.Location = new System.Drawing.Point(515, 106);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(379, 212);
+            this.groupBox1.Size = new System.Drawing.Size(403, 212);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "CPU Monitor";
@@ -336,7 +336,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label6.Location = new System.Drawing.Point(12, 102);
+            this.label6.Location = new System.Drawing.Point(6, 108);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 21);
             this.label6.TabIndex = 12;
@@ -360,7 +360,7 @@
             this.cpuWarningTxt.Multiline = true;
             this.cpuWarningTxt.Name = "cpuWarningTxt";
             this.cpuWarningTxt.ReadOnly = true;
-            this.cpuWarningTxt.Size = new System.Drawing.Size(261, 76);
+            this.cpuWarningTxt.Size = new System.Drawing.Size(292, 76);
             this.cpuWarningTxt.TabIndex = 9;
             this.cpuWarningTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -368,7 +368,7 @@
             // 
             this.cpuUsageTxt.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.cpuUsageTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.cpuUsageTxt.Location = new System.Drawing.Point(252, 30);
+            this.cpuUsageTxt.Location = new System.Drawing.Point(283, 35);
             this.cpuUsageTxt.Name = "cpuUsageTxt";
             this.cpuUsageTxt.ReadOnly = true;
             this.cpuUsageTxt.Size = new System.Drawing.Size(106, 28);
@@ -560,8 +560,8 @@
             this.BackColor = System.Drawing.Color.MediumTurquoise;
             this.ClientSize = new System.Drawing.Size(971, 651);
             this.Controls.Add(this.hidsPanel);
-            this.Controls.Add(this.nidsPanel);
             this.Controls.Add(this.mainPanel);
+            this.Controls.Add(this.nidsPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(989, 698);

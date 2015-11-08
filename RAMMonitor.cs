@@ -56,6 +56,5 @@ namespace acIDS
             TotalRAM += RAMCounter;
             AverageRAM = TotalRAM / Counter;
         }
-
     }
 }

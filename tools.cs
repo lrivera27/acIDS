@@ -51,47 +51,47 @@ namespace acIDS
         {
             string dataToExport =
                 $@"
-                Hosted Intrusion Detection Data 
-                -----------------------------------
+Hosted Intrusion Detection Data 
+-----------------------------------
 
-                CPU Stats: 
+CPU Stats: 
 
-                Current CPU Usage: {CPUMonitor.CPUCounter.ToString("F2")} %
+Current CPU Usage: {CPUMonitor.CPUCounter.ToString("F2")} %
 
-                Highest CPU Usage: {CPUMonitor.HighestCPU.ToString("F2")} %
+Highest CPU Usage: {CPUMonitor.HighestCPU.ToString("F2")} %
 
-                Lowest CPU Usage:  {CPUMonitor.LowestCPU.ToString("F2")}  %
+Lowest CPU Usage:  {CPUMonitor.LowestCPU.ToString("F2")}  %
 
-                Average CPU Usage: {CPUMonitor.AverageCPU.ToString("F2")} %
+Average CPU Usage: {CPUMonitor.AverageCPU.ToString("F2")} %
 
-                Warnings: 
-                NotYetSet
+Warnings: 
+{CPUMonitor.CPUWarnings}
 
-                -----------------------------------
+-----------------------------------
 
-                RAM Stats: 
+RAM Stats: 
 
-                Current RAM Available: {RAMMonitor.RAMCounter} MB
+Current RAM Available: {RAMMonitor.RAMCounter} MB
 
-                Highest RAM Available: {RAMMonitor.HighestRAM} MB
+Highest RAM Available: {RAMMonitor.HighestRAM} MB
 
-                Lowest RAM Available:  {RAMMonitor.LowestRAM}  MB
+Lowest RAM Available:  {RAMMonitor.LowestRAM}  MB
 
-                Average RAM Available: {RAMMonitor.AverageRAM} MB
+Average RAM Available: {RAMMonitor.AverageRAM} MB
 
-                Warnings:
+Warnings:
   
-                NotYetSet
+NotYetSet
 
-                -----------------------------------  
+-----------------------------------  
 
-                Processes Stats:     
+Processes Stats:     
 
-                Current number of Processes: {ProcessMonitor.ProcessCounter}
+Current number of Processes: {ProcessMonitor.ProcessCounter}
 
-                List of Current Running Processes: 
+List of Current Running Processes: 
 
-                {ProcessMonitor.ReadProcessesAsString()}";
+{ProcessMonitor.ReadProcessesAsString()}";
 
             File.WriteAllText(path, dataToExport);
             string test = File.ReadAllText(path);

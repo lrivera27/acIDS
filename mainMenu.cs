@@ -17,7 +17,7 @@ namespace acIDS
     {
         public static bool done = false;
 
-        public enum Panel { HidsPanel, NidsPanel, MainPanel};
+        public enum Panel { HidsPanel, NidsPanel, MainPanel };
 
         public mainMenu()
         {

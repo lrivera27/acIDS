@@ -15,20 +15,19 @@ namespace acIDS
     {
         public registrationForm()
         {
-            this.Text = "Registration Page";
+            Text = "Registration Page";
             InitializeComponent();
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
             loginForm ss = new loginForm();
-            this.Close();
+            Close();
             ss.Show();
         }
 
         private void submitBtn_Click(object sender, EventArgs e)
         {
-            //registrationFormExtension tools = new registrationFormExtension();
             string[] arr = { firstNameBox.Text, lastNameBox.Text, usernameBox.Text, passwordBox.Text };
             bool check = true;
             for(int i = 0; i < arr.Length; i++)

@@ -85,16 +85,9 @@ namespace acIDS
         public static string ReadProcessesAsString()
         {
             var output = "";
-            bool first = true;
             foreach (var str in ReadProcesses())
             {
-                if (!first)
-                    output += "                " + str + Environment.NewLine;
-                else
-                {
-                    output += str + Environment.NewLine;
-                    first = false;
-                }
+                output += str + Environment.NewLine;
             }
             return output;
         }

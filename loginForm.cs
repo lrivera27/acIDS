@@ -20,14 +20,14 @@ namespace acIDS
             InitializeComponent();
         }
 
-
+        
         private void loginBtn_Click(object sender, EventArgs e)
         {
             //Placeholder until database is implemented
             if (textBox1.Text == Program.user.username && textBox2.Text == Program.user.password)
             {
                 mainMenu ss = new mainMenu();
-                this.Hide();
+                Hide();
                 ss.Show();
             }
             else
@@ -39,7 +39,7 @@ namespace acIDS
         private void registerBtn_Click(object sender, EventArgs e)
         {
             registrationForm ss = new registrationForm();
-            this.Hide();
+            Hide();
             ss.Show();
         }
     }
