@@ -4,7 +4,6 @@ C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\acIDS\ProjectOS-toApprov
 C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\acIDS\bin\Debug\Squashids.exe.config
 C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\acIDS\bin\Debug\Squashids.exe
 C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\acIDS\bin\Debug\Squashids.pdb
-C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\acIDS\obj\Debug\acIDS.csprojResolveAssemblyReference.cache
 C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\acIDS\obj\Debug\acIDS.loginForm.resources
 C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\acIDS\obj\Debug\acIDS.mainMenu.resources
 C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\acIDS\obj\Debug\Squashids.Properties.Resources.resources

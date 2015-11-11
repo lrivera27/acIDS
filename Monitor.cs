@@ -9,56 +9,77 @@ using System.Diagnostics;
 namespace acIDS
 {
     //Contains all monitoring methods for the Hosted IDS
-    public class Monitor
+    class Monitor
     {
-        public float CounterMonitor { get; set; }
-        public float LowestMonitor { get; set; }
-        public float HighestMonitor { get; set; }
-        public float AverageMonitor { get; set; }
-        public float TotalMonitor { get; set; }
-        public float WarningsMonitor { get; set; }
-        public float Counter { get; set; }
-        
+        private float CounterMonitor { get; set; }
+        private float LowestMonitor { get; set; } 
+        private float HighestMonitor { get; set; }
+        private float AverageMonitor { get; set; }
+        private float TotalMonitor { get; set; }
+        private float Counter { get; set; }
+        private string Postfix { get; set; }
+
+        Anomaly anomaly = new Anomaly();
+
         //Enums to tell the method what its monitoring
-        public enum PC { CPU, RAM, PROCESSES}
+        public enum PC { CPU, RAM, PROCESSES }
 
-        //Calls the monitoring methods by running new tasks
-        public void StartMonitoring(TextBox usageTextBox, TextBox warningTextBox, PC monitor)
+        public Monitor()
         {
+            
+            LowestMonitor = 100000;
+            HighestMonitor = 0;
+        }
+        //Calls the monitoring methods by running new tasks
+        public void StartMonitoring(TextBox usageTextBox, TextBox warningTextBox, PC monitor, int minutes, int seconds)
+        {
+            anomaly.SetNormalUsageByTime(minutes, seconds);
             PerformanceCounter performanceCounter = new PerformanceCounter();
-
+            bool processes = false;
             switch (monitor)
             {
                 case PC.CPU:
-                    
                     performanceCounter.CategoryName = "Processor";
                     performanceCounter.CounterName = "% Processor Time";
-                    performanceCounter.InstanceName = "_Total";  
-                                 
+                    performanceCounter.InstanceName = "_Total";
+                    Postfix = "%";
                     break;
 
                 case PC.RAM:
                     performanceCounter.CategoryName = "Memory";
                     performanceCounter.CounterName = "Available MBytes";
+                    Postfix = "MB";
                     break;
 
                 case PC.PROCESSES:
-
+                    processes = true;
+                    Task.Run(() => ProcessMonitoring(usageTextBox, warningTextBox));
                     break;
 
                 default:
                     MessageBox.Show("Didn't work");
                     break;
             }
+            if (!processes)
+                Task.Run(() => { Monitoring(usageTextBox, warningTextBox, performanceCounter); });
 
-            Task.Run(() => { Monitoring(usageTextBox, warningTextBox, performanceCounter); });
+        }
 
+        public string DoFormat(float number)
+        {
+            var s = string.Format("{0:0.00}", number);
+
+            if (s.EndsWith(".00"))
+                return ((float)number).ToString();
+            else
+                return s;
         }
 
         public async void Monitoring(TextBox usageTextBox, TextBox warningTextBox, PerformanceCounter performanceCounter)
         {
             while (true)
             {
+                anomaly.StartAnomalyDetection(warningTextBox, CounterMonitor);
                 //First value always returns a 0
                 var unused = performanceCounter.NextValue();
                 await Task.Delay(1000);
@@ -66,7 +87,7 @@ namespace acIDS
                 usageTextBox.Invoke(new Action(() =>
                 {
                     CounterMonitor = performanceCounter.NextValue();
-                    usageTextBox.Text = CounterMonitor.ToString("F2") + "%";
+                    usageTextBox.Text = DoFormat(CounterMonitor) + Postfix;
                 }));
 
                 if (mainMenu.done)
@@ -87,5 +108,67 @@ namespace acIDS
             AverageMonitor = TotalMonitor / Counter;
 
         }
+
+        public async void ProcessMonitoring(TextBox usageTextBox, TextBox listTextBox)
+        {
+            CurrentNumberProcesses();
+            float changed = CounterMonitor + 1;
+            string[] data;
+
+            while (true)
+            {
+                await Task.Delay(1000);
+                CurrentNumberProcesses();
+                usageTextBox.Invoke(new Action(() =>
+                {
+                    usageTextBox.Text = CounterMonitor + "";
+                }));
+
+                if (changed != CounterMonitor)
+                {
+                    changed = CounterMonitor;
+                    listTextBox.Invoke(new Action(() =>
+                    {
+                        data = ReadProcesses();
+
+                        foreach (string pData in data)
+                        {
+                            if (listTextBox.Text.Length < 0)
+                                listTextBox.Text = pData;
+                            else
+                                listTextBox.AppendText($"\r\n{pData}");
+                        }
+                    }));
+                }
+            }
+        }
+        public void CurrentNumberProcesses()
+        {
+            Process[] numProcess = Process.GetProcesses();
+            CounterMonitor = numProcess.Length;
+        }
+
+        public static string[] ReadProcesses()
+        {
+            Process[] allProcesesses = Process.GetProcesses();
+
+            string[] data = new string[allProcesesses.Length];
+
+            for (int i = 0; i < allProcesesses.Length; i++)
+                data[i] = allProcesesses[i].ProcessName;
+            return data;
+        }
+
+        public static string ReadProcessesAsString()
+        {
+            var output = "";
+            foreach (var str in ReadProcesses())
+            {
+                output += str + Environment.NewLine;
+            }
+            return output;
+        }
+
+       
     }
 }

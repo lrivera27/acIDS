@@ -16,6 +16,9 @@ namespace acIDS
     public partial class mainMenu : Form
     {
         public static bool done = false;
+        Monitor cpu = new Monitor();
+        Monitor ram = new Monitor();
+        Monitor process = new Monitor();
 
         public enum Panel { HidsPanel, NidsPanel, MainPanel };
 
@@ -27,11 +30,10 @@ namespace acIDS
         private void hidsBtn_Click(object sender, EventArgs e)
         {
             changePanels(Panel.HidsPanel);
-            Monitor cpu = new Monitor();
-            Monitor ram = new Monitor();
-            cpu.StartMonitoring(cpuUsageTxt, cpuWarningTxt, Monitor.PC.CPU);
-            ram.StartMonitoring(ramMonitorTxt, ramWarningTxt, Monitor.PC.RAM);
 
+            cpu.StartMonitoring(cpuUsageTxt, cpuWarningTxt, Monitor.PC.CPU,  0, 10);
+            ram.StartMonitoring(ramMonitorTxt, ramWarningTxt, Monitor.PC.RAM, 0, 10);
+            process.StartMonitoring(pRunningTxt, plistTxt, Monitor.PC.PROCESSES, 0, 10);
             ////FIX::Hardcoded numbers
             //ProcessMonitor.Startmonitoring(pRunningTxt, plistTxt);
         }
