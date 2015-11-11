@@ -27,11 +27,13 @@ namespace acIDS
         private void hidsBtn_Click(object sender, EventArgs e)
         {
             changePanels(Panel.HidsPanel);
-            RAMMonitor.Startmonitoring(ramMonitorTxt);
+            Monitor cpu = new Monitor();
+            Monitor ram = new Monitor();
+            cpu.StartMonitoring(cpuUsageTxt, cpuWarningTxt, Monitor.PC.CPU);
+            ram.StartMonitoring(ramMonitorTxt, ramWarningTxt, Monitor.PC.RAM);
 
-            //FIX::Hardcoded numbers
-            CPUMonitor.StartMonitoring(cpuUsageTxt, cpuWarningTxt, 0, 5);
-            ProcessMonitor.Startmonitoring(pRunningTxt, plistTxt);
+            ////FIX::Hardcoded numbers
+            //ProcessMonitor.Startmonitoring(pRunningTxt, plistTxt);
         }
 
         private void outputBtn_Click(object sender, EventArgs e)

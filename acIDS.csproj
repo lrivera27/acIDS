@@ -128,7 +128,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Anomaly.cs" />
     <Compile Include="CPUAnomalies.cs" />
+    <Compile Include="Monitor.cs" />
     <Compile Include="ProcessMonitor.cs" />
     <Compile Include="CPUMonitor.cs" />
     <Compile Include="loginForm.cs">
@@ -143,7 +145,6 @@
     <Compile Include="mainMenu.Designer.cs">
       <DependentUpon>mainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="processHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RAMAnomalies.cs" />
