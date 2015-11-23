@@ -16,9 +16,11 @@ namespace acIDS
     public partial class mainMenu : Form
     {
         public static bool done = false;
+
         Monitor cpu = new Monitor();
         Monitor ram = new Monitor();
         Monitor process = new Monitor();
+
 
         public enum Panel { HidsPanel, NidsPanel, MainPanel };
 
@@ -31,11 +33,9 @@ namespace acIDS
         {
             changePanels(Panel.HidsPanel);
 
-            cpu.StartMonitoring(cpuUsageTxt, cpuWarningTxt, Monitor.PC.CPU,  0, 10);
+            cpu.StartMonitoring(cpuUsageTxt, cpuWarningTxt, Monitor.PC.CPU, 0, 10);
             ram.StartMonitoring(ramMonitorTxt, ramWarningTxt, Monitor.PC.RAM, 0, 10);
             process.StartMonitoring(pRunningTxt, plistTxt, Monitor.PC.PROCESSES, 0, 10);
-            ////FIX::Hardcoded numbers
-            //ProcessMonitor.Startmonitoring(pRunningTxt, plistTxt);
         }
 
         private void outputBtn_Click(object sender, EventArgs e)
@@ -88,6 +88,13 @@ namespace acIDS
             loginForm ss = new loginForm();
             Close();
             ss.Show();
+        }
+
+        private void expertHids_Click(object sender, EventArgs e)
+        {
+            ExpertMenuHids expertMenuHIDS = new ExpertMenuHids(cpu, ram, process);
+            expertMenuHIDS.Show();
+            Hide();
         }
     }
 }

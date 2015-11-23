@@ -29,3 +29,5 @@ C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\acIDS\bin\Debug\System.D
 C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\acIDS\bin\Debug\System.Data.SQLite.Linq.dll
 C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\acIDS\bin\Debug\Newtonsoft.Json.xml
 C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\acIDS\bin\Debug\SharpMap.xml
+C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\acIDS\obj\Debug\acIDS.csprojResolveAssemblyReference.cache
+C:\Users\HerpDerp\Documents\Visual Studio 2015\Projects\acIDS\obj\Debug\acIDS.ExpertMenuHids.resources

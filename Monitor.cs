@@ -5,11 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Threading;
 
 namespace acIDS
 {
     //Contains all monitoring methods for the Hosted IDS
-    class Monitor
+    public class Monitor
     {
         private float CounterMonitor { get; set; }
         private float LowestMonitor { get; set; } 
@@ -18,6 +19,7 @@ namespace acIDS
         private float TotalMonitor { get; set; }
         private float Counter { get; set; }
         private string Postfix { get; set; }
+        private string Test { get; set; }
 
         Anomaly anomaly = new Anomaly();
 
@@ -25,15 +27,25 @@ namespace acIDS
         public enum PC { CPU, RAM, PROCESSES }
 
         public Monitor()
-        {
-            
+        {  
             LowestMonitor = 100000;
             HighestMonitor = 0;
+        }
+
+        public void SetString(string str)
+        {
+            Test = str;
+        }
+
+        public string ReturnString()
+        {
+            return Test;
         }
         //Calls the monitoring methods by running new tasks
         public void StartMonitoring(TextBox usageTextBox, TextBox warningTextBox, PC monitor, int minutes, int seconds)
         {
-            anomaly.SetNormalUsageByTime(minutes, seconds);
+            Task.Run(() => anomaly.SetNormalUsageByTime(minutes, seconds));
+            
             PerformanceCounter performanceCounter = new PerformanceCounter();
             bool processes = false;
             switch (monitor)
@@ -65,21 +77,11 @@ namespace acIDS
 
         }
 
-        public string DoFormat(float number)
-        {
-            var s = string.Format("{0:0.00}", number);
-
-            if (s.EndsWith(".00"))
-                return ((float)number).ToString();
-            else
-                return s;
-        }
-
         public async void Monitoring(TextBox usageTextBox, TextBox warningTextBox, PerformanceCounter performanceCounter)
         {
             while (true)
             {
-                anomaly.StartAnomalyDetection(warningTextBox, CounterMonitor);
+                anomaly.StartAnomalyDetection(warningTextBox, CounterMonitor, Postfix);
                 //First value always returns a 0
                 var unused = performanceCounter.NextValue();
                 await Task.Delay(1000);
@@ -87,7 +89,7 @@ namespace acIDS
                 usageTextBox.Invoke(new Action(() =>
                 {
                     CounterMonitor = performanceCounter.NextValue();
-                    usageTextBox.Text = DoFormat(CounterMonitor) + Postfix;
+                    usageTextBox.Text = tools.DoFormat(CounterMonitor) + Postfix;
                 }));
 
                 if (mainMenu.done)

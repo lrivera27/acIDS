@@ -150,6 +150,7 @@
             this.expertHids.TabIndex = 25;
             this.expertHids.Text = "Expert Mode";
             this.expertHids.UseVisualStyleBackColor = true;
+            this.expertHids.Click += new System.EventHandler(this.expertHids_Click);
             // 
             // groupBox4
             // 
@@ -559,8 +560,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumTurquoise;
             this.ClientSize = new System.Drawing.Size(971, 651);
-            this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.hidsPanel);
+            this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.nidsPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;

@@ -131,6 +131,12 @@
   <ItemGroup>
     <Compile Include="Anomaly.cs" />
     <Compile Include="CPUAnomalies.cs" />
+    <Compile Include="ExpertMenuHids.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExpertMenuHids.Designer.cs">
+      <DependentUpon>ExpertMenuHids.cs</DependentUpon>
+    </Compile>
     <Compile Include="Monitor.cs" />
     <Compile Include="ProcessMonitor.cs" />
     <Compile Include="CPUMonitor.cs" />
@@ -158,6 +164,9 @@
     </Compile>
     <Compile Include="tools.cs" />
     <Compile Include="UserData.cs" />
+    <EmbeddedResource Include="ExpertMenuHids.resx">
+      <DependentUpon>ExpertMenuHids.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>
     </EmbeddedResource>

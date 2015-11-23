@@ -14,6 +14,16 @@ namespace acIDS
         public static string Path { get; set; }
         public static string Filename { get; set; }
 
+        public static string DoFormat(float number)
+        {
+            var s = string.Format("{0:0.00}", number);
+
+            if (s.EndsWith(".00"))
+                return ((float)number).ToString();
+            else
+                return s;
+        }
+
         public static bool validateString(string str)
         {
             Regex regex = new Regex(@"\W+");
