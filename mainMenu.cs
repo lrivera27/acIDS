@@ -20,7 +20,7 @@ namespace acIDS
         Monitor cpu = new Monitor();
         Monitor ram = new Monitor();
         Monitor process = new Monitor();
-
+        ExpertMenuHids expertMenuHIDS;
 
         public enum Panel { HidsPanel, NidsPanel, MainPanel };
 
@@ -92,7 +92,7 @@ namespace acIDS
 
         private void expertHids_Click(object sender, EventArgs e)
         {
-            ExpertMenuHids expertMenuHIDS = new ExpertMenuHids(cpu, ram, process);
+            expertMenuHIDS = new ExpertMenuHids(cpu, ram, process);
             expertMenuHIDS.Show();
             Hide();
         }
