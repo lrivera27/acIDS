@@ -12,8 +12,15 @@ namespace acIDS
 {
     public partial class ExpertMenuHids : Form
     {
+        private Monitor _cpu;
+        private Monitor _ram;
+        private Monitor _process;
+        
         public ExpertMenuHids(Monitor cpu, Monitor ram, Monitor process)
         {
+            _cpu = cpu;
+            _ram = ram;
+            _process = process;
             InitializeComponent();
         }
 
